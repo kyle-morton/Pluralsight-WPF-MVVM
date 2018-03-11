@@ -65,10 +65,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BindableBase.cs" />
-    <Compile Include="Customers\CustomerDetailView.xaml.cs">
-      <DependentUpon>CustomerDetailView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Customers\CustomerDetailViewModel.cs" />
     <Compile Include="Customers\CustomerListView.xaml.cs">
       <DependentUpon>CustomerListView.xaml</DependentUpon>
     </Compile>
@@ -125,12 +121,12 @@
       <Project>{bb1e80de-e6d1-4e29-bc2d-db66b81163c5}</Project>
       <Name>Zza.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ZzaDashboard.Logic\ZzaDashboard.Logic.csproj">
+      <Project>{25fa7d81-ed4b-4448-8544-b7990586c686}</Project>
+      <Name>ZzaDashboard.Logic</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Customers\CustomerDetailView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Customers\CustomerListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
