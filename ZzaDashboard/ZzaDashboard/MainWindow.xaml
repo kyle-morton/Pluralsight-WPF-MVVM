@@ -4,7 +4,7 @@
         xmlns:Customers="clr-namespace:ZzaDashboard.Customers"
         xmlns:root="clr-namespace:ZzaDashboard"
         Title="MainWindow" Height="300" Width="300"
-        >
+         >
     <Window.DataContext>
         <root:MainWindowViewModel />
     </Window.DataContext>
