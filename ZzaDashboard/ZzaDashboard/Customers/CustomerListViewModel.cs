@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Zza.Data;
 using ZzaDashboard.Services;
 
@@ -29,6 +30,26 @@ namespace ZzaDashboard.Customers
             }
         }
 
+        private Customer _selectedCustomer;
+        public Customer SelectedCustomer
+        {
+            get { return _selectedCustomer; }
+            set
+            {
+                _selectedCustomer = value;
+                //reevaluate whether delete button should be enabled
+                //CanExecute is run by default once (on init) so forcing it to rerun
+                DeleteCommand.RaiseCanExecuteChanged(); 
+            }
+        }
+
+
+        #region COMMANDS
+
+        public RelayCommand DeleteCommand { get; private set; }
+
+        #endregion
+
         #endregion
 
         public CustomerListViewModel()
@@ -38,8 +59,22 @@ namespace ZzaDashboard.Customers
                 return;
 
 
-            Customers =
-                new ObservableCollection<Customer>(_repo.GetCustomersAsync().Result);
+            Customers = new ObservableCollection<Customer>(_repo.GetCustomersAsync().Result);
+            DeleteCommand = new RelayCommand(OnDelete, CanDelete);
+        }
+
+        private void OnDelete()
+        {
+            if (SelectedCustomer == null)
+                return;
+
+            Customers.Remove(SelectedCustomer);
+            SelectedCustomer = null;
+        }
+
+        private bool CanDelete()
+        {
+            return SelectedCustomer != null;
         }
 
 

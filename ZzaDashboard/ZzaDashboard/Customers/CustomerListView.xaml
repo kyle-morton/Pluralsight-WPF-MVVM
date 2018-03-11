@@ -10,9 +10,14 @@
              d:DesignHeight="300" d:DesignWidth="300"
              >
     <!--root:ViewModelLocator.AutoWireViewModel="True"-->
-    <UserControl.DataContext>
+    <!--<UserControl.DataContext>
         <local:CustomerListViewModel />
-    </UserControl.DataContext>
+    </UserControl.DataContext>-->
+    <UserControl.InputBindings>
+        <KeyBinding Key="D"
+                    Modifiers="Ctrl"
+                    Command="{Binding DeleteCommand}"/>
+    </UserControl.InputBindings>
     <UserControl.Resources>
         <DataTemplate DataType="{x:Type data:Customer}">
             <!-- Implicit Data Template (use data type) DataType="{x:Type data:Customer}" -->
@@ -26,13 +31,22 @@
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
+        <Button Content="Delete"
+                Command="{Binding DeleteCommand}"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Width="75" />
+
         <DataGrid x:Name="customerDataGrid"
+                  Grid.Row="1"
                   AutoGenerateColumns="False"
                   EnableRowVirtualization="True"
                   ItemsSource="{Binding Customers}"
+                  SelectedItem="{Binding SelectedCustomer}"
                   RowDetailsVisibilityMode="VisibleWhenSelected">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="firstNameColumn"
@@ -49,7 +63,7 @@
                                     Width="SizeToHeader" />
             </DataGrid.Columns>
         </DataGrid>
-        <ListBox Grid.Row="1"
+        <ListBox Grid.Row="2"
                  ItemsSource="{Binding Customers}"
                  />
         <!-- Implicit Data Template (no assignment needed) - works by type) -->
