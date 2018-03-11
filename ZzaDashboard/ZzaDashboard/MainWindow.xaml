@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Customers="clr-namespace:ZzaDashboard.Customers"
         xmlns:root="clr-namespace:ZzaDashboard"
+        xmlns:shared="clr-namespace:ZzaDashboard.Shared;assembly=ZzaDashboard.Shared"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
         xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" 
         Title="MainWindow" Height="300" Width="300"
@@ -22,7 +23,7 @@
         </Grid.RowDefinitions>
         <ContentControl>
             <i:Interaction.Behaviors>
-                <root:ShowNotificationMessageBehavior Message="{Binding NotificationMessage}" />
+                <shared:ShowNotificationMessageBehavior Message="{Binding NotificationMessage}" />
             </i:Interaction.Behaviors>
         </ContentControl>
         <ContentControl Content="{Binding CurrentViewModel}"

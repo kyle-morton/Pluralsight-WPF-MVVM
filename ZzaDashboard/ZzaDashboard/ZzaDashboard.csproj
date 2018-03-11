@@ -73,12 +73,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindowViewModel.cs" />
-    <Compile Include="MvvmBehaviors.cs" />
     <Compile Include="RelayCommand.cs" />
-    <Compile Include="Services\CustomersRepository.cs" />
-    <Compile Include="Services\ICustomersRepository.cs" />
-    <Compile Include="Services\IOrdersRepository.cs" />
-    <Compile Include="Services\OrdersRepository.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -124,6 +119,10 @@
     <ProjectReference Include="..\ZzaDashboard.Logic\ZzaDashboard.Logic.csproj">
       <Project>{25fa7d81-ed4b-4448-8544-b7990586c686}</Project>
       <Name>ZzaDashboard.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZzaDashboard.Shared\ZzaDashboard.Shared.csproj">
+      <Project>{1c063d5e-c9e3-4676-9230-7cf92a83edfe}</Project>
+      <Name>ZzaDashboard.Shared</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

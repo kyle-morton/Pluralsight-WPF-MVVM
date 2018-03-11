@@ -115,6 +115,14 @@
       <Project>{bb1e80de-e6d1-4e29-bc2d-db66b81163c5}</Project>
       <Name>Zza.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ZzaDashboard.Logic\ZzaDashboard.Logic.csproj">
+      <Project>{25FA7D81-ED4B-4448-8544-B7990586C686}</Project>
+      <Name>ZzaDashboard.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZzaDashboard.Shared\ZzaDashboard.Shared.csproj">
+      <Project>{1c063d5e-c9e3-4676-9230-7cf92a83edfe}</Project>
+      <Name>ZzaDashboard.Shared</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

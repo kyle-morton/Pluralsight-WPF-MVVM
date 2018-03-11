@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using Zza.Data;
 using ZzaDashboard.Logic.Services;
+using ZzaDashboard.Shared;
 
 namespace ZzaDashboard.Customers
 {

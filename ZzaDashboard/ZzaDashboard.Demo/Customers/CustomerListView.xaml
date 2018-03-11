@@ -6,9 +6,6 @@
              xmlns:local="clr-namespace:ZzaDashboard.Demo.Customers"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <UserControl.DataContext>
-        <local:CustomerListViewModel />
-    </UserControl.DataContext>
     <Grid>
             
     </Grid>
