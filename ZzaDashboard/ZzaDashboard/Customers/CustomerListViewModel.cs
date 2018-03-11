@@ -54,14 +54,26 @@ namespace ZzaDashboard.Customers
 
         public CustomerListViewModel()
         {
+            DeleteCommand = new RelayCommand(OnDelete, CanDelete);
+        }
+
+        #region BEHAVIORS (LOADED EVENT)
+
+        /// <summary>
+        /// behavior called via MvvmBehaviors (assigned in XAML)
+        /// </summary>
+        public async void LoadCustomers()
+        {
             //if in design mode, return so it doesn't break
             if (DesignerProperties.GetIsInDesignMode(new System.Windows.DependencyObject()))
                 return;
 
-
-            Customers = new ObservableCollection<Customer>(_repo.GetCustomersAsync().Result);
-            DeleteCommand = new RelayCommand(OnDelete, CanDelete);
+            Customers = new ObservableCollection<Customer>(await _repo.GetCustomersAsync());
         }
+
+        #endregion
+
+        #region COMMANDS
 
         private void OnDelete()
         {
@@ -77,6 +89,7 @@ namespace ZzaDashboard.Customers
             return SelectedCustomer != null;
         }
 
+        #endregion
 
     }
 }

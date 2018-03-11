@@ -8,6 +8,7 @@
              xmlns:root="clr-namespace:ZzaDashboard"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
+             root:MvvmBehaviors.LoadedMethodName="LoadCustomers"
              >
     <!--root:ViewModelLocator.AutoWireViewModel="True"-->
     <!--<UserControl.DataContext>
