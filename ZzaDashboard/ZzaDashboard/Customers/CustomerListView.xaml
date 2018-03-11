@@ -45,6 +45,7 @@
                 Width="75" />
         <Button Content="Change Customer"
                 Command="{Binding DeleteCommand}"
+                Margin="80, 0, 0, 0"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Top"
                 Width="75" />
