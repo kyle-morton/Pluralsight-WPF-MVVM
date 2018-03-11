@@ -19,3 +19,14 @@ C:\Users\kylem\source\repos\WPF-MVVM\ZzaDashboard\Zza.Data\bin\Debug\EntityFrame
 C:\Users\kylem\source\repos\WPF-MVVM\ZzaDashboard\Zza.Data\obj\Debug\Zza.Data.csproj.CoreCompileInputs.cache
 C:\Users\kylem\source\repos\WPF-MVVM\ZzaDashboard\Zza.Data\obj\Debug\Zza.Data.dll
 C:\Users\kylem\source\repos\WPF-MVVM\ZzaDashboard\Zza.Data\obj\Debug\Zza.Data.pdb
+C:\Users\Kyle\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\Zza.Data\bin\Debug\Zza.Data.dll.config
+C:\Users\Kyle\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\Zza.Data\bin\Debug\Zza.Data.dll
+C:\Users\Kyle\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\Zza.Data\bin\Debug\Zza.Data.pdb
+C:\Users\Kyle\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\Zza.Data\bin\Debug\EntityFramework.dll
+C:\Users\Kyle\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\Zza.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Kyle\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\Zza.Data\bin\Debug\EntityFramework.xml
+C:\Users\Kyle\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\Zza.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Kyle\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\Zza.Data\obj\Debug\Zza.Data.csprojResolveAssemblyReference.cache
+C:\Users\Kyle\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\Zza.Data\obj\Debug\Zza.Data.csproj.CoreCompileInputs.cache
+C:\Users\Kyle\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\Zza.Data\obj\Debug\Zza.Data.dll
+C:\Users\Kyle\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\Zza.Data\obj\Debug\Zza.Data.pdb
