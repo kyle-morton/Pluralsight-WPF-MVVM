@@ -11,10 +11,17 @@ using ZzaDashboard.Services;
 
 namespace ZzaDashboard.Customers
 {
-    public class CustomerListViewModel
+    public class CustomerListViewModel : INotifyPropertyChanged
     {
 
         #region PROPS
+
+        #region event handlers
+
+        //delete {} -> now PropertyChanged wont ever be null (even if no subs)
+        public event PropertyChangedEventHandler PropertyChanged = delegate { };
+
+        #endregion
 
         private ICustomersRepository _repo = new CustomersRepository();
         private ObservableCollection<Customer> _customers;
@@ -26,20 +33,33 @@ namespace ZzaDashboard.Customers
             }
             set
             {
-                _customers = value;
+                if (_customers != value)
+                {
+                    _customers = value;
+                    //MAKE SURE THIS IS HERE -> notifies UI that this value has changed!!!
+                    //Since no longer happening in VM constructor, must trigger this to show these!
+                    PropertyChanged(this, new PropertyChangedEventArgs("Customers")); 
+                }
             }
         }
 
         private Customer _selectedCustomer;
+
         public Customer SelectedCustomer
         {
             get { return _selectedCustomer; }
             set
             {
-                _selectedCustomer = value;
-                //reevaluate whether delete button should be enabled
-                //CanExecute is run by default once (on init) so forcing it to rerun
-                DeleteCommand.RaiseCanExecuteChanged(); 
+                if (_selectedCustomer != value)
+                {
+                    _selectedCustomer = value;
+                    //reevaluate whether delete button should be enabled
+                    //CanExecute is run by default once (on init) so forcing it to rerun
+                    DeleteCommand.RaiseCanExecuteChanged();
+
+                    PropertyChanged(this, new PropertyChangedEventArgs("SelectedCustomer"));
+                }
+                
             }
         }
 
@@ -60,7 +80,7 @@ namespace ZzaDashboard.Customers
         #region BEHAVIORS (LOADED EVENT)
 
         /// <summary>
-        /// behavior called via MvvmBehaviors (assigned in XAML)
+        /// behavior setup in Blend on CustomerListView Loaded event (assigned in XAML)
         /// </summary>
         public async void LoadCustomers()
         {
