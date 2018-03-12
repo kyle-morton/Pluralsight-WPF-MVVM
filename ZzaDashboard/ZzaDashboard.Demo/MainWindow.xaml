@@ -4,9 +4,33 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ZzaDashboard.Demo"
+        xmlns:root="clr-namespace:ZzaDashboard.Demo"
+        xmlns:Customers="clr-namespace:ZzaDashboard.Demo.Customers"
+         xmlns:shared="clr-namespace:ZzaDashboard.Shared;assembly=ZzaDashboard.Shared"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+        xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" 
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
+    <Window.DataContext>
+        <root:MainWindowViewModel />
+    </Window.DataContext>
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type Customers:CustomerListViewModel}">
+            <Customers:CustomerListView />
+        </DataTemplate>
+    </Window.Resources>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <ContentControl>
+            <i:Interaction.Behaviors>
+                <shared:ShowNotificationMessageBehavior Message="{Binding NotificationMessage}" />
+            </i:Interaction.Behaviors>
+        </ContentControl>
+        <ContentControl Content="{Binding CurrentViewModel}"
+                        Grid.Row="1" />
+        <!--<ContentControl Content="{Binding CurrentViewModel}" />-->
     </Grid>
 </Window>

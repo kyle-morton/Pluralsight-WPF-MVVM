@@ -26,3 +26,17 @@ C:\Users\Kyle\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\ZzaDashboard.Logic\
 C:\Users\Kyle\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\ZzaDashboard.Logic\obj\Debug\ZzaDashboard.Logic.csproj.CoreCompileInputs.cache
 C:\Users\Kyle\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\ZzaDashboard.Logic\obj\Debug\ZzaDashboard.Logic.dll
 C:\Users\Kyle\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\ZzaDashboard.Logic\obj\Debug\ZzaDashboard.Logic.pdb
+C:\Users\kylem\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\ZzaDashboard.Logic\bin\Debug\ZzaDashboard.Logic.dll.config
+C:\Users\kylem\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\ZzaDashboard.Logic\bin\Debug\ZzaDashboard.Logic.dll
+C:\Users\kylem\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\ZzaDashboard.Logic\bin\Debug\ZzaDashboard.Logic.pdb
+C:\Users\kylem\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\ZzaDashboard.Logic\bin\Debug\EntityFramework.dll
+C:\Users\kylem\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\ZzaDashboard.Logic\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\kylem\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\ZzaDashboard.Logic\bin\Debug\Zza.Data.dll
+C:\Users\kylem\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\ZzaDashboard.Logic\bin\Debug\Zza.Data.pdb
+C:\Users\kylem\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\ZzaDashboard.Logic\bin\Debug\Zza.Data.dll.config
+C:\Users\kylem\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\ZzaDashboard.Logic\bin\Debug\EntityFramework.xml
+C:\Users\kylem\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\ZzaDashboard.Logic\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\kylem\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\ZzaDashboard.Logic\obj\Debug\ZzaDashboard.Logic.csprojResolveAssemblyReference.cache
+C:\Users\kylem\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\ZzaDashboard.Logic\obj\Debug\ZzaDashboard.Logic.csproj.CoreCompileInputs.cache
+C:\Users\kylem\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\ZzaDashboard.Logic\obj\Debug\ZzaDashboard.Logic.dll
+C:\Users\kylem\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\ZzaDashboard.Logic\obj\Debug\ZzaDashboard.Logic.pdb

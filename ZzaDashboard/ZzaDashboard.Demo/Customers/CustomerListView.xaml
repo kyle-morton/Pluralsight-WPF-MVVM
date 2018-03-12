@@ -4,9 +4,79 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ZzaDashboard.Demo.Customers"
+             xmlns:data="clr-namespace:Zza.Data;assembly=Zza.Data"
+             xmlns:root="clr-namespace:ZzaDashboard"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type data:Customer}">
+            <!-- Implicit Data Template (use data type) DataType="{x:Type data:Customer}" -->
+            <!-- Explicit Data Template (use key)  x:Key="CustomerTemplate"-->
+            <StackPanel>
+                <TextBlock Text="{Binding FirstName}"/>
+                <TextBlock Text="{Binding LastName}"/>
+                <TextBlock Text="{Binding Phone}"/>
+            </StackPanel>
+        </DataTemplate>
+    </UserControl.Resources>
+    <UserControl.InputBindings>
+        <KeyBinding Key="D"
+                    Modifiers="Ctrl"
+                    Command="{Binding DeleteCommand}"/>
+    </UserControl.InputBindings>
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <!-- REM: {Binding} refers to DataContext itself -->
+            <ei:CallMethodAction TargetObject="{Binding}" MethodName="LoadCustomers"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Button Content="Delete"
+                Command="{Binding DeleteCommand}"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Width="75" />
+        <!--<Button Content="Change Customer"
+                Command="{Binding DeleteCommand}"
+                Margin="80, 0, 0, 0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Width="75" />-->
+
+        <DataGrid x:Name="customerDataGrid"
+                  Grid.Row="1"
+                  AutoGenerateColumns="False"
+                  EnableRowVirtualization="True"
+                  ItemsSource="{Binding Customers}"
+                  SelectedItem="{Binding SelectedCustomer}"
+                  RowDetailsVisibilityMode="VisibleWhenSelected">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="firstNameColumn"
+                                    Binding="{Binding FirstName}"
+                                    Header="First name"
+                                    Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="lastNameColumn"
+                                    Binding="{Binding LastName}"
+                                    Header="Last name"
+                                    Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="phoneColumn"
+                                    Binding="{Binding Phone}"
+                                    Header="Phone"
+                                    Width="SizeToHeader" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <ListBox Grid.Row="2"
+                 ItemsSource="{Binding Customers}"
+                 />
+        <!-- Implicit Data Template (no assignment needed) - works by type) -->
+        <!-- Explicit Data Template (assign to ItemTemplate) ItemTemplate="{StaticResource CustomerTemplate}" -->
     </Grid>
 </UserControl>

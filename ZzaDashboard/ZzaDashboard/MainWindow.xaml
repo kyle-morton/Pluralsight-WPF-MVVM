@@ -6,8 +6,7 @@
         xmlns:shared="clr-namespace:ZzaDashboard.Shared;assembly=ZzaDashboard.Shared"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
         xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" 
-        Title="MainWindow" Height="300" Width="300"
-         >
+        Title="MainWindow" Height="300" Width="300">
     <Window.DataContext>
         <root:MainWindowViewModel />
     </Window.DataContext>

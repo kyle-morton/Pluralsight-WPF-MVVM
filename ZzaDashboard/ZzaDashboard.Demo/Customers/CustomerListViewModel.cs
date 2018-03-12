@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Zza.Data;
 using ZzaDashboard.Logic.Services;
+using ZzaDashboard.Shared;
 
 namespace ZzaDashboard.Demo.Customers
 {
@@ -72,9 +73,52 @@ namespace ZzaDashboard.Demo.Customers
 
         #region commands
 
-
+        public RelayCommand DeleteCommand { get; private set; }
 
         #endregion
+
+        #endregion
+
+        #region CTOR
+
+        public CustomerListViewModel()
+        {
+            DeleteCommand = new RelayCommand(OnDelete, CanDelete);
+        }
+
+        #endregion
+
+        #region COMMANDS
+
+        private bool CanDelete()
+        {
+            return _selectedCustomer != null;
+        }
+
+        private void OnDelete()
+        {
+            if (SelectedCustomer == null)
+                return;
+
+            Customers.Remove(SelectedCustomer);
+            SelectedCustomer = null;
+        }
+
+        #endregion
+
+        #region BEHAVIORS (LOADED EVENT)
+
+        /// <summary>
+        /// behavior setup in Blend on CustomerListView Loaded event (assigned in XAML)
+        /// </summary>
+        public async void LoadCustomers()
+        {
+            //if in design mode, return so it doesn't break
+            if (DesignerProperties.GetIsInDesignMode(new System.Windows.DependencyObject()))
+                return;
+
+            Customers = new ObservableCollection<Customer>(await _repo.GetCustomersAsync());
+        }
 
         #endregion
 
