@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\kylem\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\ZzaDashboard.Demo\App.xaml
-2-2014779615
+3980555311
 
-121282268427
+141838776525
 22-1567727677
-Customers\CustomerListView.xaml;MainWindow.xaml;
+Customers\CreateCustomerView.xaml;Customers\CustomerListView.xaml;MainWindow.xaml;
 
-True
+False
 

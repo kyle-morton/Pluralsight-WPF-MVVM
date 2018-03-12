@@ -55,6 +55,23 @@ namespace Zza.Data
                 }
             }
         }
+        private string _email;
+        public string Email
+        {
+            get
+            {
+                return _email;
+            }
+            set
+            {
+                if (_email != value)
+                {
+                    _email = value;
+                    PropertyChanged(this, new PropertyChangedEventArgs("Email"));
+                }
+            }
+        }
+
         public string FullName
         {
             get
@@ -63,7 +80,7 @@ namespace Zza.Data
             }
         }
         public string Phone { get; set; }
-        public string Email { get; set; }
+        
         public string Street { get; set; }
         public string City { get; set; }
         public string State { get; set; }

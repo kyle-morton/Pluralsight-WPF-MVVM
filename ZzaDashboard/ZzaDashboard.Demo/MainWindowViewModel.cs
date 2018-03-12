@@ -52,7 +52,8 @@ namespace ZzaDashboard.Demo
 
         public MainWindowViewModel()
         {
-            CurrentViewModel = new CustomerListViewModel();
+            //CurrentViewModel = new CustomerListViewModel();
+            CurrentViewModel = new CreateCustomerViewModel();
             _timer.Elapsed += (s, e) =>
             {
                 NotificationMessage = "At the tone, the time will be: " + DateTime.Now.ToLocalTime().ToString();

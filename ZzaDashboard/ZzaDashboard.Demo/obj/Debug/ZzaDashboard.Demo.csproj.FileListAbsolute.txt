@@ -95,3 +95,5 @@ C:\Users\kylem\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\ZzaDashboard.Demo\
 C:\Users\kylem\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\ZzaDashboard.Demo\obj\Debug\ZzaDashboard.Demo.csproj.GenerateResource.Cache
 C:\Users\kylem\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\ZzaDashboard.Demo\obj\Debug\ZzaDashboard.Demo.csproj.CoreCompileInputs.cache
 C:\Users\kylem\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\ZzaDashboard.Demo\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\kylem\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\ZzaDashboard.Demo\obj\Debug\Customers\CreateCustomerView.g.cs
+C:\Users\kylem\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\ZzaDashboard.Demo\obj\Debug\Customers\CreateCustomerView.baml
