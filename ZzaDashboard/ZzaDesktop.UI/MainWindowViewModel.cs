@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Zza.Data;
 using ZzaDashboard.Shared;
 using ZzaDesktop.UI.Customers;
 using ZzaDesktop.UI.OrderPrep;
@@ -20,6 +21,7 @@ namespace ZzaDesktop.UI
         private CustomerListViewModel _customerListViewModel = new CustomerListViewModel();
         private OrderPrepViewModel _orderPrepViewModel = new OrderPrepViewModel();
         private OrderViewModel _orderViewModel = new OrderViewModel();
+        private AddEditCustomerViewModel _addEditCustomerViewModel = new AddEditCustomerViewModel();
 
         private BindableBase _currentViewModel;
         public BindableBase CurrentViewModel
@@ -50,6 +52,9 @@ namespace ZzaDesktop.UI
         {
             //set NavCommand to call OnNav method
             NavCommand = new RelayCommand<string>(OnNav);
+            _customerListViewModel.PlaceOrderRequested += NavToOrder;
+            _customerListViewModel.AddCustomerRequested += NavToAddCustomer;
+            _customerListViewModel.EditCustomerRequested += NavToEditCustomer;
         }
 
         #endregion
@@ -72,6 +77,27 @@ namespace ZzaDesktop.UI
                     CurrentViewModel = _customerListViewModel;
                     break;
             }
+        }
+
+        private void NavToOrder(Guid customerId)
+        {
+            //set id prop on vm (set context), then navigate to it
+            _orderViewModel.CustomerId = customerId;
+            CurrentViewModel = _orderViewModel;
+        }
+
+        private void NavToAddCustomer(Customer customer)
+        {
+            _addEditCustomerViewModel.EditMode = false;
+            _addEditCustomerViewModel.SetCustomer(customer);
+            CurrentViewModel = _addEditCustomerViewModel;
+        }
+
+        private void NavToEditCustomer(Customer customer)
+        {
+            _addEditCustomerViewModel.EditMode = true;
+            _addEditCustomerViewModel.SetCustomer(customer);
+            CurrentViewModel = _addEditCustomerViewModel;
         }
 
         #endregion

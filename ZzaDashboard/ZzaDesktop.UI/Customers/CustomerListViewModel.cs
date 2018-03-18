@@ -26,12 +26,24 @@ namespace ZzaDesktop.UI.Customers
         }
 
         public RelayCommand<Customer> PlaceOrderCommand { get; private set; }
+        public RelayCommand AddCustomerCommand { get; private set; }
+        public RelayCommand<Customer> EditCustomerCommand { get; private set; }
+
+        #region events
+
+        public event Action<Guid> PlaceOrderRequested = delegate { };
+        public event Action<Customer> AddCustomerRequested = delegate { };
+        public event Action<Customer> EditCustomerRequested = delegate { };
+
+        #endregion
 
         #endregion
 
         public CustomerListViewModel()
         {
             PlaceOrderCommand = new RelayCommand<Customer>(OnPlaceOrder);
+            AddCustomerCommand = new RelayCommand(OnAddCustomer);
+            EditCustomerCommand = new RelayCommand<Customer>(OnEditCustomer);
         }
 
         #region BEHAVIORS
@@ -55,7 +67,17 @@ namespace ZzaDesktop.UI.Customers
 
         private void OnPlaceOrder(Customer customer) 
         {
+            PlaceOrderRequested(customer.Id);
+        }
 
+        private void OnAddCustomer()
+        {
+            AddCustomerRequested(new Customer { Id = Guid.NewGuid() });
+        }
+
+        private void OnEditCustomer(Customer customer)
+        {
+            EditCustomerRequested(customer);
         }
 
         #endregion

@@ -40,5 +40,6 @@ namespace ZzaDashboard.Shared
             PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
+
     }
 }

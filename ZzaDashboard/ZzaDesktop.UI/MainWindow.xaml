@@ -17,6 +17,9 @@
         <DataTemplate DataType="{x:Type cust:CustomerListViewModel}">
             <cust:CustomerListView />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type cust:AddEditCustomerViewModel}">
+            <cust:AddEditCustomerView/>
+        </DataTemplate>
         <DataTemplate DataType="{x:Type prep:OrderPrepViewModel}">
             <prep:OrderPrepView />
         </DataTemplate>
