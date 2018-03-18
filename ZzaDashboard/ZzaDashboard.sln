@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZzaDashboard.Logic", "ZzaDa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZzaDashboard.Shared", "ZzaDashboard.Shared\ZzaDashboard.Shared.csproj", "{1C063D5E-C9E3-4676-9230-7CF92A83EDFE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZzaDesktop.UI", "ZzaDesktop.UI\ZzaDesktop.UI.csproj", "{A1F95232-955A-4951-8053-B10AFB4DB370}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{1C063D5E-C9E3-4676-9230-7CF92A83EDFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C063D5E-C9E3-4676-9230-7CF92A83EDFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C063D5E-C9E3-4676-9230-7CF92A83EDFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1F95232-955A-4951-8053-B10AFB4DB370}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1F95232-955A-4951-8053-B10AFB4DB370}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1F95232-955A-4951-8053-B10AFB4DB370}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1F95232-955A-4951-8053-B10AFB4DB370}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
