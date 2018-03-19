@@ -29,7 +29,7 @@
                   CanUserAddRows="False"
                   Grid.Row="1">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding FirstName}"
+                <DataGridTextColumn Binding="{Binding FullName}"
                                     Width="*"/>
                 <DataGridTemplateColumn Width="Auto">
                     <DataGridTemplateColumn.CellTemplate>

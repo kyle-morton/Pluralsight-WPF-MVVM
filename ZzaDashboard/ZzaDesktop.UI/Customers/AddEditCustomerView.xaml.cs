@@ -25,12 +25,5 @@ namespace ZzaDesktop.UI.Customers
         {
             InitializeComponent();
         }
-
-        public bool EditMode { get; internal set; }
-
-        internal void SetCustomer(Customer customer)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

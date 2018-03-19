@@ -55,6 +55,7 @@ namespace ZzaDesktop.UI
             _customerListViewModel.PlaceOrderRequested += NavToOrder;
             _customerListViewModel.AddCustomerRequested += NavToAddCustomer;
             _customerListViewModel.EditCustomerRequested += NavToEditCustomer;
+            _addEditCustomerViewModel.Done += NavToCustomerList;
         }
 
         #endregion
@@ -98,6 +99,11 @@ namespace ZzaDesktop.UI
             _addEditCustomerViewModel.EditMode = true;
             _addEditCustomerViewModel.SetCustomer(customer);
             CurrentViewModel = _addEditCustomerViewModel;
+        }
+
+        private void NavToCustomerList()
+        {
+            CurrentViewModel = _customerListViewModel;
         }
 
         #endregion
