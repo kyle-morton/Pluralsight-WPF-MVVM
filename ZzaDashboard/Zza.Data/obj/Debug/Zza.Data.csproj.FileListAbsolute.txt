@@ -41,3 +41,4 @@ C:\Users\kylem\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\Zza.Data\obj\Debug
 C:\Users\kylem\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\Zza.Data\obj\Debug\Zza.Data.csproj.CoreCompileInputs.cache
 C:\Users\kylem\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\Zza.Data\obj\Debug\Zza.Data.dll
 C:\Users\kylem\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\Zza.Data\obj\Debug\Zza.Data.pdb
+C:\Users\kylem\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\Zza.Data\obj\Debug\Zza.Data.csproj.CopyComplete

@@ -40,3 +40,4 @@ C:\Users\kylem\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\ZzaDashboard.Logic
 C:\Users\kylem\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\ZzaDashboard.Logic\obj\Debug\ZzaDashboard.Logic.csproj.CoreCompileInputs.cache
 C:\Users\kylem\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\ZzaDashboard.Logic\obj\Debug\ZzaDashboard.Logic.dll
 C:\Users\kylem\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\ZzaDashboard.Logic\obj\Debug\ZzaDashboard.Logic.pdb
+C:\Users\kylem\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\ZzaDashboard.Logic\obj\Debug\ZzaDashboard.Logic.csproj.CopyComplete

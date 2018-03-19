@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,7 +53,8 @@ namespace ZzaDesktop.UI.Customers
 
         private bool CanSave()
         {
-            return true;
+
+            return !Customer.HasErrors;
         }
 
         private void OnCancel()
@@ -67,7 +69,10 @@ namespace ZzaDesktop.UI.Customers
         public void SetCustomer(Customer customer)
         {
             _editCustomer = customer;
+            if (Customer != null)
+                Customer.ErrorsChanged -= RaiseCanExecuteChanged;
             Customer = new SimpleEditableCustomer();
+            Customer.ErrorsChanged += RaiseCanExecuteChanged;
             CopyCustomer(customer, Customer);
         }
 
@@ -81,6 +86,10 @@ namespace ZzaDesktop.UI.Customers
                 target.Phone = source.Phone;
                 target.Email = source.Email;
             }
+        }
+
+        private void RaiseCanExecuteChanged(object sender, DataErrorsChangedEventArgs e)
+        {
         }
 
         #endregion

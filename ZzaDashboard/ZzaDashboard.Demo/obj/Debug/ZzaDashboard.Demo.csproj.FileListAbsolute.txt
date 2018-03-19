@@ -171,3 +171,4 @@ C:\Users\Kyle\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\ZzaDashboard.Demo\o
 C:\Users\Kyle\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\ZzaDashboard.Demo\obj\Debug\ZzaDashboard.Demo.csproj.CoreCompileInputs.cache
 C:\Users\Kyle\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\ZzaDashboard.Demo\obj\Debug\ZzaDashboard.Demo.exe
 C:\Users\Kyle\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\ZzaDashboard.Demo\obj\Debug\ZzaDashboard.Demo.pdb
+C:\Users\kylem\source\repos\Pluralsight-WPF-MVVM\ZzaDashboard\ZzaDashboard.Demo\obj\Debug\ZzaDashboard.Demo.csproj.CopyComplete

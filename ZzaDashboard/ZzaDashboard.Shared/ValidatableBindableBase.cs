@@ -38,6 +38,8 @@ namespace ZzaDashboard.Shared
         private void ValidateProperty<T>(string propertyName, T value)
         {
             var results = new List<System.ComponentModel.DataAnnotations.ValidationResult>();
+
+            //using data annotations with a ValidationContext
             ValidationContext context = new ValidationContext(this);
             context.MemberName = propertyName;
             Validator.TryValidateProperty(value, context, results);

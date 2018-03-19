@@ -1,9 +1,10 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using ZzaDashboard.Shared;
 
 namespace ZzaDesktop.UI.Customers
 {
-    public class SimpleEditableCustomer : BindableBase
+    public class SimpleEditableCustomer : ValidatableBindableBase
     {
         private Guid _id;
 
@@ -15,6 +16,7 @@ namespace ZzaDesktop.UI.Customers
 
         private string _firstName;
 
+        [Required]
         public string FirstName
         {
             get { return _firstName; }
@@ -23,6 +25,7 @@ namespace ZzaDesktop.UI.Customers
 
         private string _lastName;
 
+        [Required]
         public string LastName
         {
             get { return _lastName; }
@@ -31,6 +34,7 @@ namespace ZzaDesktop.UI.Customers
 
         private string _phone;
 
+        [Phone]
         public string Phone
         {
             get { return _phone; }
@@ -38,7 +42,7 @@ namespace ZzaDesktop.UI.Customers
         }
 
         private string _email;
-
+        [EmailAddress]
         public string Email
         {
             get { return _email; }
