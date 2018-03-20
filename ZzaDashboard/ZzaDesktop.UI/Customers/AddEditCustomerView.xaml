@@ -9,8 +9,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
-        <conv:NegateBooleanToVisibilityConverter x:Key="VisConverter" />
-        <conv:NegateBooleanToVisibilityConverter x:Key="NegVisConverter" Negate="True" />
+        <conv:NegatableBooleanToVisibilityConverter x:Key="VisConverter" />
+        <conv:NegatableBooleanToVisibilityConverter x:Key="NegVisConverter" Negate="True" />
 
         <Style TargetType="TextBox">
             <Style.Triggers>

@@ -90,6 +90,7 @@ namespace ZzaDesktop.UI.Customers
 
         private void RaiseCanExecuteChanged(object sender, DataErrorsChangedEventArgs e)
         {
+            SaveCommand.RaiseCanExecuteChanged();
         }
 
         #endregion
