@@ -8,3 +8,21 @@ Unity Framework (use version 3.1... instead of newest for time being, .Resolve<t
 4) on init of those variables, call the container.resolve<type>() method to allow for it to inject an instance
 
 This instance will be reused for any injection if the 'ContainerControlledLifetimeManager' property is passed when registering the type.
+
+
+Toolkits
+-------------
+
+Prism Framework (Microsoft MVVM)
+
+-bindable base 
+-VM locator
+-modular
+-UI Composition/Regions 
+-Navigation (fw/bw & nav stack)
+-Commands
+-Pub/Sub events 
+
+
+MVVM Light
+Caliburn Micro
