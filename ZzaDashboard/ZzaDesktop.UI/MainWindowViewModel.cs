@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Zza.Data;
+using ZzaDashboard.Logic.Services;
 using ZzaDashboard.Shared;
 using ZzaDesktop.UI.Customers;
 using ZzaDesktop.UI.OrderPrep;
 using ZzaDesktop.UI.Orders;
+using Microsoft.Practices.Unity;
 
 namespace ZzaDesktop.UI
 {
@@ -18,10 +20,10 @@ namespace ZzaDesktop.UI
 
         #region view models
 
-        private CustomerListViewModel _customerListViewModel = new CustomerListViewModel();
+        private CustomerListViewModel _customerListViewModel;
         private OrderPrepViewModel _orderPrepViewModel = new OrderPrepViewModel();
         private OrderViewModel _orderViewModel = new OrderViewModel();
-        private AddEditCustomerViewModel _addEditCustomerViewModel = new AddEditCustomerViewModel();
+        private AddEditCustomerViewModel _addEditCustomerViewModel;
 
         private BindableBase _currentViewModel;
         public BindableBase CurrentViewModel
@@ -50,6 +52,12 @@ namespace ZzaDesktop.UI
 
         public MainWindowViewModel()
         {
+            //todo: find fix fo newest IOC Unity package not having Resolve<type> method available
+            //have container construct & inject both view models (that require customers repo)
+            _customerListViewModel = IocContainerHelper.Container.Resolve<CustomerListViewModel>();
+            _addEditCustomerViewModel = IocContainerHelper.Container.Resolve<AddEditCustomerViewModel>();
+
+
             //set NavCommand to call OnNav method
             NavCommand = new RelayCommand<string>(OnNav);
             _customerListViewModel.PlaceOrderRequested += NavToOrder;

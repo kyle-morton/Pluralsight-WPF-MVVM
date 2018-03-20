@@ -15,9 +15,9 @@ namespace ZzaDesktop.UI.Customers
 
         #region PROPS
 
-        private ICustomersRepository _repo = new CustomersRepository();
+        private ICustomersRepository _repo;
 
-
+        private ObservableCollection<Customer> _allCustomers;
         private ObservableCollection<Customer> _customers;
         public ObservableCollection<Customer> Customers
         {
@@ -28,6 +28,18 @@ namespace ZzaDesktop.UI.Customers
         public RelayCommand<Customer> PlaceOrderCommand { get; private set; }
         public RelayCommand AddCustomerCommand { get; private set; }
         public RelayCommand<Customer> EditCustomerCommand { get; private set; }
+        public RelayCommand ClearSearchCommand { get; private set; }
+
+        private string _searchInput;
+        public string SearchInput
+        {
+            get { return _searchInput; }
+            set
+            {
+                SetProperty(ref _searchInput, value);
+                FilterCustomers(_searchInput);
+            }
+        }
 
         #region events
 
@@ -39,11 +51,13 @@ namespace ZzaDesktop.UI.Customers
 
         #endregion
 
-        public CustomerListViewModel()
+        public CustomerListViewModel(ICustomersRepository repo)
         {
+            _repo = repo;
             PlaceOrderCommand = new RelayCommand<Customer>(OnPlaceOrder);
             AddCustomerCommand = new RelayCommand(OnAddCustomer);
             EditCustomerCommand = new RelayCommand<Customer>(OnEditCustomer);
+            ClearSearchCommand = new RelayCommand(OnClearSearch);
         }
 
         #region BEHAVIORS
@@ -55,9 +69,9 @@ namespace ZzaDesktop.UI.Customers
         public async void LoadCustomers()
         {
             //REMEMBER: behavior method must return void (not task) in this scenario
-
-
-            Customers = new ObservableCollection<Customer>(
+            _allCustomers 
+                = Customers 
+                = new ObservableCollection<Customer>(
                 await _repo.GetCustomersAsync());
         }
 
@@ -78,6 +92,29 @@ namespace ZzaDesktop.UI.Customers
         private void OnEditCustomer(Customer customer)
         {
             EditCustomerRequested(customer);
+        }
+
+        private void OnClearSearch()
+        {
+            //empty search input to trigger propertychanged & filtercustomers()
+            SearchInput = string.Empty; 
+        }
+
+        #endregion
+
+        #region SEARCH 
+
+        private void FilterCustomers(string searchInput)
+        {
+            if (string.IsNullOrEmpty(searchInput))
+            {
+                Customers = new ObservableCollection<Customer>(_allCustomers);
+            }
+            else
+            {
+                Customers = new ObservableCollection<Customer>(
+                        _allCustomers.Where(c => c.FullName.ToLower().Contains(searchInput.ToLower())));
+            }
         }
 
         #endregion

@@ -1,0 +1,10 @@
+IOC (Inversion of Control)/Dependency Injection 
+
+Unity Framework (use version 3.1... instead of newest for time being, .Resolve<type>() method not found in newest one, need workaround)
+
+1) Install unity nuget
+2) create a unity container 'helper' to hold singleton instance of the container
+3) register any types in it's static constructor that it is responsible for creating when needed.
+4) on init of those variables, call the container.resolve<type>() method to allow for it to inject an instance
+
+This instance will be reused for any injection if the 'ContainerControlledLifetimeManager' property is passed when registering the type.
